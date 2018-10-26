@@ -1,0 +1,25 @@
+!Job
+target: !Target
+  head: 28097c0e3641e0399d5ef54869cadd7d84ed9311
+  email: travis@example.org
+  branch: crossbow
+  remote: https://github.com/praveenbingo/arrow
+  version: 0.9.1.dev1273
+tasks:
+  ubuntu-trusty-gandiva: !Task
+    platform: linux
+    template: gandiva/travis.linux.yml
+    artifacts:
+    - arrow-gandiva-0.9.1.dev1273-SNAPSHOT.jar
+    params: {}
+    branch: test-33-ubuntu-trusty-gandiva
+    commit: 03a64ce398e5bde8f7216bbdfdb280b5bed15186
+  osx-gandiva: !Task
+    platform: osx
+    template: gandiva/travis.osx.yml
+    artifacts:
+    - arrow-gandiva-0.9.1.dev1273-SNAPSHOT.jar
+    params: {}
+    branch: test-33-osx-gandiva
+    commit: 8a346c7accd333e44f1bb6840ef8e72b761ccf02
+branch: test-33
